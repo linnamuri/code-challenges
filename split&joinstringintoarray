@@ -1,0 +1,30 @@
+
+//how to split a string in to array and rejoin 
+let secretString = 'yai ell ero tho bost'
+
+//key 
+//o => a; u => i; a=> e; e => o;
+
+//to loop-over a string, you first have to split it using .split()
+let secretArr = secretString.split('')
+
+// console.log(secretArr)
+
+for(let i = 0;i < secretArr.length;i++){
+  //check each alphabet and substitute the vowels with actual values
+  if(secretArr[i] === 'a'){
+    secretArr[i] = 'o'
+  } else if(secretArr[i] === 'i'){
+    secretArr[i] = 'u'
+  } else if (secretArr[i] === 'e'){
+    secretArr[i] = 'a'
+  } else if (secretArr[i] === 'o'){
+    secretArr[i] = 'e'
+  } 
+}
+
+console.log(secretArr)
+//change array back to string by using .join()
+let decodedString = secretArr.join('')
+console.log(decodedString)
+console.log(decodedString.length)
