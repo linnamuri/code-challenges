@@ -1,0 +1,65 @@
+<!--Takeaway
+Difficulty
+Harder
+
+Concepts
+Game Theory
+
+
+There’s a game, “takeaway”, that is played by two players, using a number of stones.
+
+The first player goes first. She can take 2, 3, or 5 stones from the pool. The second player goes next; she can also remove 2, 3, or 5 stones. The first player then goes, and so on.
+
+If a player is unable to move (there are fewer than 2 stones), they lose.
+
+Your Challenge
+Imagine that both players have “perfect play” — that is, they always make the best possible move. Then, you can absolutely determine who would win a game with n stones.*/
+-->
+<script>
+
+
+function canWin(n)
+{
+    stones=document.getElementById("stones").value;
+    
+    if(stones-n > 2)
+        return true;
+    else
+        return false;
+
+}
+
+function play()
+{
+        n=document.getElementById("dice").value;
+        if(canWin(n))
+        {
+            document.getElementById("winner").innerHTML="Player 2 Wins";
+        }
+        else
+        {
+            document.getElementById("winner").innerHTML="Player 1 Wins";
+        }
+    
+}
+
+//window.onload = play(10);
+
+
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Number of Stones: <input type="text" id="stones" value=""><br/><br/>
+    Player 1 Input: <input type="text" id="dice" value="">
+    <button name="" onclick="play()">Submit</button>
+    <br/><p id="winner"></p>
+
+</body>
+</html>
